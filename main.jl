@@ -25,8 +25,8 @@ include("src/saveparameters.jl")
 include("src/createresultsdirectory.jl")
 
 ### Provide the path to the Uber datasets and the path to the folder where you want to save your results
-path_to_cities = "/Users/undisputed/Documents/data/Uber Movement/";
-path_to_results_folder = "/Users/undisputed/Documents/data/Results/";
+path_to_cities = "/data/Uber Movement/";
+path_to_results_folder = "/results/";
 city_list = readdir(path_to_cities); #getting the names of directories
 
 ### Define these parameters manually
