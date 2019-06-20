@@ -23,14 +23,13 @@ include("src/createresultsdirectory.jl");
 
 
 ### Provide the path to the Uber datasets and the path to the folder where you want to save your results
-path_to_cities = "/Users/undisputed/Documents/data/Uber Movement/";
-path_to_results_folder = "/Users/undisputed/Documents/data/Results/";
+path_to_cities =  # "***Insert path to Uber Movement travel time data ***" ;
+path_to_results_folder = # **Insert path to directory where sampling results should be saved **;
 city_list = readdir(path_to_cities); #getting the names of directories
 
 
 ############### Insert a list of particular cities that you want to sample here ##############
 #city_list = [" ***Insert a city here*** "]
-city_list = ["Sydney"]
 ##############################################################################################
 
 
