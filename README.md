@@ -26,12 +26,12 @@ We start with importing a number of packages that we want to use throughout this
 
 
 ```julia
-#using Pkg         
-#Pkg.update()
-#Pkg.add("Plots")
-#Pkg.add("CSV")
-#Pkg.add("Distributions")
-#Pkg.add("JSON")
+using Pkg         
+Pkg.update()
+Pkg.add("Plots")
+Pkg.add("CSV")
+Pkg.add("Distributions")
+Pkg.add("JSON")
 using Plots, CSV, Distributions, JSON, JLD2, FileIO
 ```
 
@@ -45,7 +45,7 @@ Each zone of the city is given as a polygon with multiple pairs of latitudinal a
 
 
 ```julia
-path_to_json_data = "/Users/undisputed/Documents/data/Uber Movement/Melbourne/melbourne_tz.json";
+path_to_json_data = "**Insert path to Uber Movement city json file here**";
 
 import JSON
 open(path_to_json_data, "r") do json_file 
@@ -252,7 +252,7 @@ We import and store the raw Uber data into a matrix that we call **"rawdata"**. 
 
 
 ```julia
-rawdata = CSV.read("/Users/undisputed/Documents/data/Uber Movement/Melbourne/melbourne-tz-2017-1-OnlyWeekdays-HourlyAggregate.csv")
+rawdata = CSV.read("**Insert path to Uber Movement city travel time data here**")
 ```
 
 
