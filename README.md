@@ -1,7 +1,11 @@
 
 # City-scale car traffic and parking density maps from Uber Movement travel time data
 
----
+<img src="MethodFigure.png">
+
+## Citation 
+
+Aryandoust A., Van Vliet O. & Patt A. City-scale car traffic and parking density maps from Uber Movement travel time data, Scientific Data 6, 158 (2019). https://doi.org/10.1038/s41597-019-0159-6
 
 ##  Overview
 
@@ -11,25 +15,13 @@
 4. Sampling
 5. Model selection
 
----
-
-## Citation 
-
-Aryandoust A., Van Vliet O. & Patt A. City-scale car traffic and parking density maps from Uber Movement travel time data, Scientific Data 6, 158 (2019). https://doi.org/10.1038/s41597-019-0159-6
-
----
-
 ## 1 Introduction
 
 Car parking is of central importance to congestion on roads and the urban planning process of optimizing road networks, pricing parking lots and planning land use. The efficient placement, sizing and grid connection of charging stations for electric cars makes it even more important to know the spatio-temporal distribution of car parking densities on the scale of entire cities. It is currently difficult and expensive to measure such data directly. Here, we generate car parking density maps for 34 cities worldwide using Uber travel time data only. We formulate a Hidden Markov Model that contains non-linear functional relationships between the changing average travel times among the zones of a city and both the traffic activity and flow direction probabilities of cars. We then sample the traffic flow for 1,000 cars per city zone for each city from these probability distributions and normalize the resulting spatial parking distribution of cars in each time step. Our model reaches about 90% accuracy for parking densities and up to 99% for circadian traffic activity.
 
 We are given the arithmetic mean of hourly travel time measurements between different zones of a city and want to estimate the traffic flow and spatial parking distribution of cars in that city. We start with preparing the original data sets that we retrieve from Uber (2. Data preparation). In a first stage of our analysis, we estimate the probabilities of car traffic between zones as a function of mean travel times. These probabilities exploit the changes in mean travel time between the zones of the city throughout a day to approximate information about a) when cars would drive and b) where they would drive to (3. Stochastic distributions). In a second stage, we sample individual car traffic flows from these probability distributions and determine the number of cars parked in every zone (4. Sampling). In a third and last stage, we use actually measured parking densities and traffic activities to improve our model parameters (5. Model selection). The travel time data is provided by the Uber Movement project and is publicly accessible at https://movement.uber.com/?lang=en-US. The measurements that we use for validation and model selection are provided by the city of Melbourne and are also publicly accessible at https://data.melbourne.vic.gov.au/. The generated car parking density maps can be downloaded at https://doi.org/10.7910/DVN/8HAJFE. 
 
-
-<img src="MethodFigure.png">
-
 We start with importing a number of packages that we want to use throughout this notebook session. 
-
 
 ```julia
 using Pkg         
